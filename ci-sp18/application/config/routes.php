@@ -50,31 +50,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-//Create news items
+//Create news items-> news controller/model
 $route['news/create'] = 'news/create';
-$route['news/(:any)'] = 'news/view/$1';
-
-//news controller/model
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 
-//Static pages
-$route['default_controller'] = 'pages/view';
+//pages controller - fallback if no other controller
 $route['(:any)'] = 'pages/view/$1';
 
+//default_controller goes news as home page
+$route['default_controller'] = 'news';
 
 
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;
 
-
-
-
-
-//
 //$route['default_controller'] = 'welcome';
-//$route['404_override'] = '';
-//$route['translate_uri_dashes'] = FALSE;
-
-
-
-
-
