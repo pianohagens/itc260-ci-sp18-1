@@ -15,9 +15,9 @@ public function get_news($slug = FALSE)
         return $query->result_array();
     }
 
-        $query = $this->db->get_where('news', array('slug' => $slug));
+        $query = $this->db->get_where('sp18_news', array('slug' => $slug));
         return $query->row_array();
-}
+}//end get_news()
     
     public function set_news()
 {
@@ -31,7 +31,16 @@ public function get_news($slug = FALSE)
         'text' => $this->input->post('text')
     );
 
-    return $this->db->insert('sp18_news', $data);
-}
-}
-// END News_model
+    //return $this->db->insert('sp18_news', $data);
+        
+    if($this->db->insert('sp18_news', $data))
+    {//data  inserted and pass back the slug
+        
+        return $slug;
+        
+    }else{// data not inserted, passed back warning
+        return false;
+    }
+        
+}//end set_news()
+}// END News_model
