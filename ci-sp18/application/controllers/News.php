@@ -14,17 +14,18 @@ class News extends CI_Controller {
     {
         $data['news'] = $this->news_model->get_news();
         //$data['title'] = 'News archive';
-        $this->config->set_item('title','News Title');
+        $this->config->set_item('title','Lists News');
         $this->load->view('news/index', $data);
     }//end of index()
 
     public function view($slug = NULL)
     {
             $data['news_item'] = $this->news_model->get_news($slug);
-
+            $this->config->set_item('title','View News');
             if (empty($data['news_item']))
             {
-                    show_404();
+                feedback('Please fill out two entry fields!','error');
+                redirect('/news/create');
             }
 
             $data['title'] = $data['news_item']['title'];
@@ -37,7 +38,8 @@ class News extends CI_Controller {
         $this->load->library('form_validation');
 
         $data['title'] = 'Create a news item';
-
+        $this->config->set_item('title','Create News');
+        
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('text', 'Text', 'required');
 
@@ -59,6 +61,7 @@ class News extends CI_Controller {
                 redirect('/news/create');
             }
         }
-    }//end of create()
+    }//end of create()    
+
 
 }
