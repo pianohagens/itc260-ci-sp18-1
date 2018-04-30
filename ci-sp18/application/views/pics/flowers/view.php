@@ -1,7 +1,10 @@
 <?php
-//application/views/pics/cows/index.php
+//application/views/pics/flowers/view.php
+
 $this->load->view($this->config->item('theme') . 'header');
+
 ?>
+
 
 
 <?php

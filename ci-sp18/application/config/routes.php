@@ -49,14 +49,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-//Create pics items-> news controller/model
+//Create pics items-> mariners controller/model
+$route['pics/flowers/view'] = 'pics/flowers/view';
+$route['pics(:any)'] = 'pics';
+$route['pics/flowers'] = 'pics/flowers';
+
+//Create pics items-> cows controller/model
+$route['pics/pigs/view'] = 'pics/pigs/view';
+$route['pics(:any)'] = 'pics';
+$route['pics/pigs'] = 'pics/pigs';
+
+//Create pics items-> cows controller/model
+$route['pics/dogs/view'] = 'pics/dogs/view';
+$route['pics(:any)'] = 'pics';
+$route['pics/dogs/'] = 'pics/dogs';
+
+//Create pics items-> cows controller/model
 $route['pics/cows/view'] = 'pics/cows/view';
-$route['pics/(:any)'] = 'pics';
-$route['pics/cows/'] = 'pics/cows/';
+$route['pics(:any)'] = 'pics';
+$route['pics/cows'] = 'pics/cows';
 
 //Create news items-> news controller/model
 $route['news/create'] = 'news/create';
-$route['news/(:any)'] = 'news/view/$1';
+$route['news(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 
 //pages controller - fallback if no other controller
