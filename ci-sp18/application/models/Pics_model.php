@@ -11,7 +11,7 @@ class Pics_model extends CI_Model {
 
 public function get_pics(){    
       
-    $api_key = 'ae29fbea19142766bda6a4ccb10dc170';
+    $api_key = 'eiowuqr9852413355dsjfdskjaupoua4ccbdsasjfs';
     //$getTagName = tagname(); 
     $tags = 'Cow,Cows';
     
