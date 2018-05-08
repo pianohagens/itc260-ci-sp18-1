@@ -27,9 +27,9 @@
 <!--			<li class="active"><a href="#" title="">Active Link</a></li>              -->
 <!--			<li><//?=//anchor('news/create','Creat News')?></li>-->
               
-              <li><?=anchor('pics/view/flower','Flower')?></li>
-              <li><?=anchor('pics/view/pigs','Pigs')?></li>
-              <li><?=anchor('pics/view/dogs','Dogs')?></li>
+              <li><?=anchor('pics/flower','Flower')?></li>
+              <li><?=anchor('pics/pigs','Pigs')?></li>
+              <li><?=anchor('pics/dogs','Dogs')?></li>
 			
           </ul>
         </div>
